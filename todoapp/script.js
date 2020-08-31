@@ -67,10 +67,10 @@ class UI{
 class Store{
     static getTask(){
         var tasks;
-        if(localStorage.getItem('books')=== null){
+        if(localStorage.getItem('tasks')=== null){
             tasks =[];
         }else{
-            tasks=JSON.parentElement(localStorage.getItem('books'));
+            tasks=JSON.parse(localStorage.getItem('tasks'));
         }
          return tasks;
     }
@@ -91,7 +91,7 @@ class Store{
             }
         });
 
-        localStorage.setItem('tasks', JSON.stringify(books));
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }
 
@@ -144,3 +144,4 @@ document.querySelector('#task-list').addEventListener('click', (e)=> {
     //Show sucess message
     UI.showAlert('Task Removed','success');
 });
+
